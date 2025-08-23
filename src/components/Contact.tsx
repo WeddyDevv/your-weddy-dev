@@ -84,185 +84,189 @@ const Contact = () => {
       setIsSubmitting(false)
     }
   }
+
   return (
-    <section id="contact" className="py-10 sm:py-16 lg:py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="contact" className="py-8 sm:py-12 lg:py-20 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="flex justify-center mb-4">
-            <div className="flex items-center space-x-2 bg-rose-gold/20 rounded-full px-4 py-2">
-              <Heart className="w-5 h-5 text-rose-gold-dark" fill="currentColor" />
-              <span className="text-sm font-medium text-navy-elegant">Get In Touch</span>
+            <div className="flex items-center space-x-2 bg-rose-gold/20 rounded-full px-3 sm:px-4 py-2">
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-rose-gold-dark" fill="currentColor" />
+              <span className="text-xs sm:text-sm font-medium text-navy-elegant">Get In Touch</span>
             </div>
           </div>
           
-          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-navy-elegant mb-4">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy-elegant mb-3 sm:mb-4 px-2">
             Let's Start Your Dream Wedding Website
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Ready to create something beautiful together? We'd love to hear your story and discuss your vision.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           {/* Contact Form */}
-          <Card className="p-6 sm:p-8 shadow-elegant border-0 bg-gradient-elegant">
-            <div className="mb-6 sm:mb-8">
-              <h3 className="font-playfair text-xl sm:text-2xl font-semibold text-navy-elegant mb-2">
-                Tell Us About Your Wedding
-              </h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                Share your vision and we'll create a personalized proposal just for you.
-              </p>
-            </div>
-            
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="partner1" className="text-navy-elegant font-medium">Partner 1 Name *</Label>
-                  <Input 
-                    id="partner1"
-                    {...register("partner1", { required: "Partner 1 name is required" })}
-                    placeholder="Enter your name"
-                    className="border-rose-gold/30 focus:border-rose-gold-dark"
-                  />
-                  {errors.partner1 && <p className="text-red-500 text-xs">{errors.partner1.message}</p>}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="partner2" className="text-navy-elegant font-medium">Partner 2 Name *</Label>
-                  <Input 
-                    id="partner2"
-                    {...register("partner2", { required: "Partner 2 name is required" })}
-                    placeholder="Enter partner's name"
-                    className="border-rose-gold/30 focus:border-rose-gold-dark"
-                  />
-                  {errors.partner2 && <p className="text-red-500 text-xs">{errors.partner2.message}</p>}
-                </div>
+          <div className="order-2 lg:order-1">
+            <Card className="p-4 sm:p-6 lg:p-8 shadow-elegant border-0 bg-gradient-elegant">
+              <div className="mb-6 sm:mb-8">
+                <h3 className="font-playfair text-lg sm:text-xl lg:text-2xl font-semibold text-navy-elegant mb-2">
+                  Tell Us About Your Wedding
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base text-muted-foreground">
+                  Share your vision and we'll create a personalized proposal just for you.
+                </p>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-navy-elegant font-medium">Email Address *</Label>
-                  <Input 
-                    id="email"
-                    type="email"
-                    {...register("email", { 
-                      required: "Email is required",
-                      pattern: {
-                        value: /^\S+@\S+$/i,
-                        message: "Please enter a valid email"
-                      }
-                    })}
-                    placeholder="your@email.com"
-                    className="border-rose-gold/30 focus:border-rose-gold-dark"
-                  />
-                  {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="partner1" className="text-sm font-medium text-navy-elegant">Partner 1 Name *</Label>
+                    <Input 
+                      id="partner1"
+                      {...register("partner1", { required: "Partner 1 name is required" })}
+                      placeholder="Enter your name"
+                      className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
+                    />
+                    {errors.partner1 && <p className="text-red-500 text-xs">{errors.partner1.message}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="partner2" className="text-sm font-medium text-navy-elegant">Partner 2 Name *</Label>
+                    <Input 
+                      id="partner2"
+                      {...register("partner2", { required: "Partner 2 name is required" })}
+                      placeholder="Enter partner's name"
+                      className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
+                    />
+                    {errors.partner2 && <p className="text-red-500 text-xs">{errors.partner2.message}</p>}
+                  </div>
                 </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium text-navy-elegant">Email Address *</Label>
+                    <Input 
+                      id="email"
+                      type="email"
+                      {...register("email", { 
+                        required: "Email is required",
+                        pattern: {
+                          value: /^\S+@\S+$/i,
+                          message: "Please enter a valid email"
+                        }
+                      })}
+                      placeholder="your@email.com"
+                      className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
+                    />
+                    {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-sm font-medium text-navy-elegant">Phone Number</Label>
+                    <Input 
+                      id="phone"
+                      type="tel"
+                      {...register("phone")}
+                      placeholder="+1 (555) 123-4567"
+                      className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
+                    />
+                  </div>
+                </div>
+                
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-navy-elegant font-medium">Phone Number</Label>
+                  <Label htmlFor="weddingDate" className="text-sm font-medium text-navy-elegant">Wedding Date *</Label>
                   <Input 
-                    id="phone"
-                    type="tel"
-                    {...register("phone")}
-                    placeholder="+1 (555) 123-4567"
-                    className="border-rose-gold/30 focus:border-rose-gold-dark"
+                    id="weddingDate"
+                    type="date"
+                    {...register("weddingDate", { required: "Wedding date is required" })}
+                    className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
+                  />
+                  {errors.weddingDate && <p className="text-red-500 text-xs">{errors.weddingDate.message}</p>}
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="venue" className="text-sm font-medium text-navy-elegant">Wedding Venue (Optional)</Label>
+                  <Input 
+                    id="venue"
+                    {...register("venue")}
+                    placeholder="Venue name and location"
+                    className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
                   />
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="weddingDate" className="text-navy-elegant font-medium">Wedding Date *</Label>
-                <Input 
-                  id="weddingDate"
-                  type="date"
-                  {...register("weddingDate", { required: "Wedding date is required" })}
-                  className="border-rose-gold/30 focus:border-rose-gold-dark"
-                />
-                {errors.weddingDate && <p className="text-red-500 text-xs">{errors.weddingDate.message}</p>}
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="venue" className="text-navy-elegant font-medium">Wedding Venue (Optional)</Label>
-                <Input 
-                  id="venue"
-                  {...register("venue")}
-                  placeholder="Venue name and location"
-                  className="border-rose-gold/30 focus:border-rose-gold-dark"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="budget" className="text-navy-elegant font-medium">Website Budget Range</Label>
-                <select 
-                  {...register("budget")}
-                  className="w-full px-3 py-2 border border-rose-gold/30 rounded-md focus:outline-none focus:border-rose-gold-dark bg-background"
+                
+                <div className="space-y-2">
+                  <Label htmlFor="budget" className="text-sm font-medium text-navy-elegant">Website Budget Range</Label>
+                  <select 
+                    {...register("budget")}
+                    className="w-full px-3 py-2 text-sm border border-rose-gold/30 rounded-md focus:outline-none focus:border-rose-gold-dark bg-background"
+                  >
+                    <option value="">Select your budget range</option>
+                    <option value="under-500">Under $500</option>
+                    <option value="500-1000">$500 - $1,000</option>
+                    <option value="1000-2000">$1,000 - $2,000</option>
+                    <option value="over-2000">$2,000+</option>
+                  </select>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-sm font-medium text-navy-elegant">Tell Us Your Vision *</Label>
+                  <Textarea 
+                    id="message"
+                    {...register("message", { required: "Please tell us about your vision" })}
+                    placeholder="Describe your dream wedding website, style preferences, special requirements, or any questions you have..."
+                    rows={3}
+                    className="text-sm border-rose-gold/30 focus:border-rose-gold-dark resize-none"
+                  />
+                  {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
+                </div>
+                
+                <Button 
+                  type="submit"
+                  variant="hero" 
+                  size="lg" 
+                  className="w-full" 
+                  disabled={isSubmitting}
                 >
-                  <option value="">Select your budget range</option>
-                  <option value="under-500">Under $500</option>
-                  <option value="500-1000">$500 - $1,000</option>
-                  <option value="1000-2000">$1,000 - $2,000</option>
-                  <option value="over-2000">$2,000+</option>
-                </select>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message" className="text-navy-elegant font-medium">Tell Us Your Vision *</Label>
-                <Textarea 
-                  id="message"
-                  {...register("message", { required: "Please tell us about your vision" })}
-                  placeholder="Describe your dream wedding website, style preferences, special requirements, or any questions you have..."
-                  rows={4}
-                  className="border-rose-gold/30 focus:border-rose-gold-dark"
-                />
-                {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
-              </div>
-              
-              <Button 
-                type="submit"
-                variant="hero" 
-                size="lg" 
-                className="w-full" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send Our Love Story
-                    <Send className="w-5 h-5" />
-                  </>
-                )}
-              </Button>
-              
-              <p className="text-sm text-muted-foreground text-center">
-                We'll respond within 24 hours with a personalized proposal
-              </p>
-            </form>
-          </Card>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Our Love Story
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </>
+                  )}
+                </Button>
+                
+                <p className="text-xs sm:text-sm text-muted-foreground text-center">
+                  We'll respond within 24 hours with a personalized proposal
+                </p>
+              </form>
+            </Card>
+          </div>
           
           {/* Contact Info & CTA */}
-          <div className="space-y-8">
+          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
             {/* Contact Methods */}
-            <div className="grid gap-6">
+            <div className="grid gap-4 sm:gap-6">
               {contactInfo.map((item, index) => {
                 const IconComponent = item.icon
                 return (
                   <Card 
                     key={index}
-                    className="p-6 shadow-soft hover:shadow-card transition-all duration-300 border-0 group"
+                    className="p-4 sm:p-6 shadow-soft hover:shadow-card transition-all duration-300 border-0 group"
                   >
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-rose-gold/20 rounded-xl flex items-center justify-center group-hover:bg-rose-gold/30 transition-colors">
-                        <IconComponent className="w-6 h-6 text-rose-gold-dark" />
+                    <div className="flex items-start space-x-3 sm:space-x-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-rose-gold/20 rounded-xl flex items-center justify-center group-hover:bg-rose-gold/30 transition-colors flex-shrink-0">
+                        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-rose-gold-dark" />
                       </div>
-                      <div>
-                        <h4 className="font-playfair font-semibold text-navy-elegant mb-1">
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-playfair font-semibold text-navy-elegant mb-1 text-sm sm:text-base">
                           {item.title}
                         </h4>
-                        <p className="text-rose-gold-dark font-medium mb-1">{item.value}</p>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                        <p className="text-rose-gold-dark font-medium mb-1 text-sm sm:text-base break-words">{item.value}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{item.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -279,26 +283,30 @@ const Contact = () => {
               <p className="text-sm sm:text-base text-white/90 mb-6">
                 Schedule a 30-minute call to discuss your vision and get expert guidance on your wedding website.
               </p>
-              <Button variant="hero" size="lg" className="w-full sm:w-auto bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full sm:w-auto bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark"
+              >
                 Schedule Call
                 <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </Card>
             
             {/* Trust Indicator */}
-            <Card className="p-6 border-0 shadow-soft">
+            <Card className="p-4 sm:p-6 border-0 shadow-soft">
               <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="font-playfair font-semibold text-navy-elegant mb-1">
+                <div className="min-w-0 flex-1">
+                  <h4 className="font-playfair font-semibold text-navy-elegant mb-1 text-sm sm:text-base">
                     Join 500+ Happy Couples
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Trusted by couples worldwide
                   </p>
                 </div>
-                <div className="flex">
+                <div className="flex flex-shrink-0 ml-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-rose-gold-dark fill-current" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-rose-gold-dark fill-current" />
                   ))}
                 </div>
               </div>
