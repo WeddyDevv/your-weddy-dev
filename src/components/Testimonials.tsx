@@ -4,36 +4,36 @@ import { Star, Heart, Quote } from "lucide-react"
 const testimonials = [
   {
     id: 1,
-    name: "Sarah & Michael Thompson",
-    location: "Napa Valley, CA",
-    wedding: "Garden Estate Wedding",
+    name: "Aisha & Mohammad Ahmed",
+    location: "Mumbai, Maharashtra",
+    wedding: "Royal Palace Wedding",
     quote: "Eternal Moments created the most beautiful wedding website for us. Our guests were amazed by the elegant design and how easy it was to RSVP. The team truly captured our love story perfectly.",
     rating: 5,
     image: "/placeholder-couple1.jpg"
   },
   {
     id: 2,
-    name: "Emma & James Rodriguez",
-    location: "Charleston, SC", 
-    wedding: "Historic Venue Celebration",
+    name: "Fatima & Ali Hassan",
+    location: "Hyderabad, Telangana", 
+    wedding: "Heritage Venue Celebration",
     quote: "We couldn't be happier with our wedding website! The attention to detail and luxurious feel exceeded our expectations. Every guest complimented us on how stunning and professional it looked.",
     rating: 5,
     image: "/placeholder-couple2.jpg"
   },
   {
     id: 3,
-    name: "Isabella & David Chen",
-    location: "Malibu, CA",
-    wedding: "Coastal Romance",
+    name: "Zara & Omar Khan",
+    location: "Lahore, Pakistan",
+    wedding: "Garden Romance",
     quote: "From start to finish, the process was seamless. They understood our vision and brought it to life beautifully. The RSVP system made managing our guest list so much easier!",
     rating: 5,
     image: "/placeholder-couple3.jpg"
   },
   {
     id: 4,
-    name: "Sophia & Alexander Kim",
-    location: "New York, NY",
-    wedding: "Metropolitan Luxury",
+    name: "Amina & Yusuf Sheikh",
+    location: "Delhi, India",
+    wedding: "Grand Celebration",
     quote: "The level of sophistication and elegance they brought to our wedding website was exactly what we hoped for. Our families loved being able to access everything in one beautiful place.",
     rating: 5,
     image: "/placeholder-couple4.jpg"

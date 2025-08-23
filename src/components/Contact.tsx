@@ -97,10 +97,10 @@ const Contact = () => {
             </div>
           </div>
           
-          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy-elegant mb-3 sm:mb-4 px-2">
+          <h2 className="font-playfair text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy-elegant mb-3 sm:mb-4 px-2 leading-tight">
             Let's Start Your Dream Wedding Website
           </h2>
-          <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-xs xs:text-sm sm:text-base lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
             Ready to create something beautiful together? We'd love to hear your story and discuss your vision.
           </p>
         </div>
@@ -110,10 +110,10 @@ const Contact = () => {
           <div className="order-2 lg:order-1">
             <Card className="p-4 sm:p-6 lg:p-8 shadow-elegant border-0 bg-gradient-elegant">
               <div className="mb-6 sm:mb-8">
-                <h3 className="font-playfair text-lg sm:text-xl lg:text-2xl font-semibold text-navy-elegant mb-2">
+                <h3 className="font-playfair text-base xs:text-lg sm:text-xl lg:text-2xl font-semibold text-navy-elegant mb-2 leading-tight">
                   Tell Us About Your Wedding
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base text-muted-foreground">
+                <p className="text-xs xs:text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed">
                   Share your vision and we'll create a personalized proposal just for you.
                 </p>
               </div>

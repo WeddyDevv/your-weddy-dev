@@ -140,7 +140,7 @@ const Services = () => {
                 Complete Wedding Package
               </h3>
               <p className="text-xl text-white/90 mb-6">
-                Everything you need for a luxury wedding website experience, including all services plus premium features.
+                Get 25% off when you purchase both Urdu and English versions of your wedding website.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
