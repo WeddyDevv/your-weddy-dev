@@ -1,8 +1,11 @@
+import { useState } from "react"
+import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { useToast } from "@/hooks/use-toast"
 import { 
   Phone, 
   Mail, 
@@ -11,8 +14,20 @@ import {
   Calendar, 
   Heart,
   Clock,
-  Star
+  Star,
+  Send
 } from "lucide-react"
+
+interface ContactFormData {
+  partner1: string
+  partner2: string
+  email: string
+  phone: string
+  weddingDate: string
+  venue: string
+  budget: string
+  message: string
+}
 
 const contactInfo = [
   {
@@ -42,6 +57,33 @@ const contactInfo = [
 ]
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>()
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true)
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      toast({
+        title: "Thank you for reaching out! 💕",
+        description: "We'll get back to you within 24 hours with a personalized proposal.",
+      })
+      
+      reset()
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -61,7 +103,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Contact Form */}
           <Card className="p-8 shadow-elegant border-0 bg-gradient-elegant">
             <div className="mb-8">
@@ -73,41 +115,54 @@ const Contact = () => {
               </p>
             </div>
             
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="partner1" className="text-navy-elegant font-medium">Partner 1 Name</Label>
+                  <Label htmlFor="partner1" className="text-navy-elegant font-medium">Partner 1 Name *</Label>
                   <Input 
                     id="partner1"
+                    {...register("partner1", { required: "Partner 1 name is required" })}
                     placeholder="Enter your name"
                     className="border-rose-gold/30 focus:border-rose-gold-dark"
                   />
+                  {errors.partner1 && <p className="text-red-500 text-xs">{errors.partner1.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="partner2" className="text-navy-elegant font-medium">Partner 2 Name</Label>
+                  <Label htmlFor="partner2" className="text-navy-elegant font-medium">Partner 2 Name *</Label>
                   <Input 
                     id="partner2"
+                    {...register("partner2", { required: "Partner 2 name is required" })}
                     placeholder="Enter partner's name"
                     className="border-rose-gold/30 focus:border-rose-gold-dark"
                   />
+                  {errors.partner2 && <p className="text-red-500 text-xs">{errors.partner2.message}</p>}
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-navy-elegant font-medium">Email Address</Label>
+                  <Label htmlFor="email" className="text-navy-elegant font-medium">Email Address *</Label>
                   <Input 
                     id="email"
                     type="email"
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: "Please enter a valid email"
+                      }
+                    })}
                     placeholder="your@email.com"
                     className="border-rose-gold/30 focus:border-rose-gold-dark"
                   />
+                  {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-navy-elegant font-medium">Phone Number</Label>
                   <Input 
                     id="phone"
                     type="tel"
+                    {...register("phone")}
                     placeholder="+1 (555) 123-4567"
                     className="border-rose-gold/30 focus:border-rose-gold-dark"
                   />
@@ -115,18 +170,21 @@ const Contact = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="wedding-date" className="text-navy-elegant font-medium">Wedding Date</Label>
+                <Label htmlFor="weddingDate" className="text-navy-elegant font-medium">Wedding Date *</Label>
                 <Input 
-                  id="wedding-date"
+                  id="weddingDate"
                   type="date"
+                  {...register("weddingDate", { required: "Wedding date is required" })}
                   className="border-rose-gold/30 focus:border-rose-gold-dark"
                 />
+                {errors.weddingDate && <p className="text-red-500 text-xs">{errors.weddingDate.message}</p>}
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="venue" className="text-navy-elegant font-medium">Wedding Venue (Optional)</Label>
                 <Input 
                   id="venue"
+                  {...register("venue")}
                   placeholder="Venue name and location"
                   className="border-rose-gold/30 focus:border-rose-gold-dark"
                 />
@@ -134,7 +192,10 @@ const Contact = () => {
               
               <div className="space-y-2">
                 <Label htmlFor="budget" className="text-navy-elegant font-medium">Website Budget Range</Label>
-                <select className="w-full px-3 py-2 border border-rose-gold/30 rounded-md focus:outline-none focus:border-rose-gold-dark">
+                <select 
+                  {...register("budget")}
+                  className="w-full px-3 py-2 border border-rose-gold/30 rounded-md focus:outline-none focus:border-rose-gold-dark bg-background"
+                >
                   <option value="">Select your budget range</option>
                   <option value="under-500">Under $500</option>
                   <option value="500-1000">$500 - $1,000</option>
@@ -144,18 +205,35 @@ const Contact = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-navy-elegant font-medium">Tell Us Your Vision</Label>
+                <Label htmlFor="message" className="text-navy-elegant font-medium">Tell Us Your Vision *</Label>
                 <Textarea 
                   id="message"
+                  {...register("message", { required: "Please tell us about your vision" })}
                   placeholder="Describe your dream wedding website, style preferences, special requirements, or any questions you have..."
                   rows={4}
                   className="border-rose-gold/30 focus:border-rose-gold-dark"
                 />
+                {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
               </div>
               
-              <Button variant="hero" size="lg" className="w-full">
-                Send Our Love Story
-                <Heart className="w-5 h-5" />
+              <Button 
+                type="submit"
+                variant="hero" 
+                size="lg" 
+                className="w-full" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Our Love Story
+                    <Send className="w-5 h-5" />
+                  </>
+                )}
               </Button>
               
               <p className="text-sm text-muted-foreground text-center">

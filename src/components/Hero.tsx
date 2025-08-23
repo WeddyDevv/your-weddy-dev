@@ -5,93 +5,79 @@ import heroImage from "@/assets/hero-wedding.jpg"
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with Parallax Effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed transform scale-105"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-navy-elegant/60" />
+      {/* Enhanced Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-elegant/80 via-navy-elegant/60 to-navy-elegant/40" />
+      
+      {/* Floating Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-rose-gold rounded-full animate-pulse opacity-60" />
+        <div className="absolute top-32 right-16 w-1 h-1 bg-champagne rounded-full animate-pulse opacity-80" />
+        <div className="absolute bottom-40 left-20 w-3 h-3 bg-rose-gold/40 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute bottom-60 right-32 w-2 h-2 bg-champagne/60 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+      </div>
       
       {/* Content */}
-      <div className="relative container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
-          {/* Left Side - Main Content */}
-          <div className="text-white space-y-8">
-            <div className="flex mb-6 animate-fade-in">
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-2">
-                <Star className="w-4 h-4 text-rose-gold" fill="currentColor" />
-                <span className="text-sm font-medium">Luxury Wedding Websites</span>
-                <Star className="w-4 h-4 text-rose-gold" fill="currentColor" />
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-up">
-                Designing Unforgettable,
-                <span className="block text-rose-gold">Luxurious Weddings</span>
-                <span className="block">Just for You</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed animate-fade-in-up max-w-2xl">
-                Personalized websites for couples who expect magic on their big day. We craft bespoke digital experiences that tell your unique love story.
-              </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
-              <Button 
-                variant="luxury" 
-                size="xl"
-                className="group bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark transition-all duration-300 shadow-elegant"
-                onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                See Our Creations
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                variant="hero" 
-                size="xl"
-                className="group border-2 border-white/30 hover:border-rose-gold hover:bg-rose-gold/10"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Begin Your Luxury Journey
-                <Heart className="w-5 h-5" />
-              </Button>
-            </div>
-
-            {/* Social Proof */}
-            <div className="pt-8 animate-fade-in">
-              <p className="text-sm text-white/60 mb-4">Featured in luxury wedding publications</p>
-              <div className="flex items-center space-x-8">
-                <div className="text-white/80 font-semibold text-sm">BRIDES</div>
-                <div className="text-white/80 font-semibold text-sm">MARTHA STEWART</div>
-                <div className="text-white/80 font-semibold text-sm">VOGUE WEDDINGS</div>
-                <div className="text-white/80 font-semibold text-sm">THE KNOT</div>
-              </div>
+      <div className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto text-center text-white">
+          <div className="flex justify-center mb-8 animate-fade-in">
+            <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-lg rounded-full px-6 py-3 border border-white/20 shadow-elegant">
+              <Star className="w-5 h-5 text-rose-gold" fill="currentColor" />
+              <span className="text-sm font-medium tracking-wide">Luxury Wedding Websites</span>
+              <Star className="w-5 h-5 text-rose-gold" fill="currentColor" />
             </div>
           </div>
           
-          {/* Right Side - Stats */}
-          <div className="lg:flex lg:justify-end">
-            <div className="grid grid-cols-1 gap-8 lg:gap-12 animate-fade-in">
-              <div className="text-center lg:text-right">
-                <div className="text-4xl md:text-5xl font-playfair font-bold text-rose-gold mb-2">500+</div>
-                <div className="text-sm text-white/80 font-medium">Dream Weddings Created</div>
-              </div>
-              <div className="text-center lg:text-right">
-                <div className="text-4xl md:text-5xl font-playfair font-bold text-rose-gold mb-2">98%</div>
-                <div className="text-sm text-white/80 font-medium">Happy Couples</div>
-              </div>
-              <div className="text-center lg:text-right">
-                <div className="text-4xl md:text-5xl font-playfair font-bold text-rose-gold mb-2">5★</div>
-                <div className="text-sm text-white/80 font-medium">Average Rating</div>
-              </div>
-              <div className="text-center lg:text-right">
-                <div className="text-4xl md:text-5xl font-playfair font-bold text-rose-gold mb-2">24h</div>
-                <div className="text-sm text-white/80 font-medium">Response Time</div>
-              </div>
+          <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up">
+            <span className="block leading-tight">Creating Your</span>
+            <span className="block text-rose-gold bg-gradient-to-r from-rose-gold to-champagne bg-clip-text text-transparent drop-shadow-lg">Perfect Love Story</span>
+            <span className="block leading-tight">Online</span>
+          </h1>
+          
+          <p className="text-lg sm:text-xl md:text-2xl mb-10 text-white/95 font-light leading-relaxed animate-fade-in-up max-w-4xl mx-auto px-4">
+            We design breathtaking, custom wedding websites that capture the essence of your unique love story. From elegant invitations to seamless RSVP management, every detail crafted with luxury in mind.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up mb-16">
+            <Button 
+              variant="hero" 
+              size="xl"
+              className="group shadow-elegant hover:shadow-soft"
+              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              See Our Creations
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            
+            <Button 
+              variant="luxury" 
+              size="xl"
+              className="shadow-elegant hover:shadow-soft"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Start Your Journey
+              <Heart className="w-5 h-5" />
+            </Button>
+          </div>
+          
+          {/* Stats - Mobile Responsive */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 animate-fade-in">
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-playfair font-bold text-rose-gold mb-2">500+</div>
+              <div className="text-sm text-white/90 tracking-wide">Dream Weddings Created</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-playfair font-bold text-rose-gold mb-2">98%</div>
+              <div className="text-sm text-white/90 tracking-wide">Happy Couples</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-playfair font-bold text-rose-gold mb-2">5★</div>
+              <div className="text-sm text-white/90 tracking-wide">Average Rating</div>
             </div>
           </div>
         </div>

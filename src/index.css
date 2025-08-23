@@ -168,6 +168,29 @@ All colors MUST be HSL.
     color: hsl(var(--rose-gold-dark));
   }
 
+  /* Enhanced scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--rose-gold-dark));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--rose-gold));
+  }
+
   .bg-rose-gold {
     background-color: hsl(var(--rose-gold));
   }
