@@ -85,7 +85,7 @@ const Contact = () => {
     }
   }
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-10 sm:py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
