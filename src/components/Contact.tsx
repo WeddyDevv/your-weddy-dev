@@ -106,11 +106,11 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Contact Form */}
           <Card className="p-6 sm:p-8 shadow-elegant border-0 bg-gradient-elegant">
-            <div className="mb-8">
-              <h3 className="font-playfair text-2xl font-semibold text-navy-elegant mb-2">
+            <div className="mb-6 sm:mb-8">
+              <h3 className="font-playfair text-xl sm:text-2xl font-semibold text-navy-elegant mb-2">
                 Tell Us About Your Wedding
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Share your vision and we'll create a personalized proposal just for you.
               </p>
             </div>
@@ -271,17 +271,17 @@ const Contact = () => {
             </div>
             
             {/* Quick CTA */}
-            <Card className="p-8 bg-gradient-navy text-white shadow-elegant border-0 text-center">
-              <Calendar className="w-12 h-12 text-rose-gold mx-auto mb-4" />
-              <h3 className="font-playfair text-xl font-semibold mb-2">
+            <Card className="p-6 sm:p-8 bg-gradient-navy text-white shadow-elegant border-0 text-center">
+              <Calendar className="w-10 h-10 sm:w-12 sm:h-12 text-rose-gold mx-auto mb-4" />
+              <h3 className="font-playfair text-lg sm:text-xl font-semibold mb-2">
                 Book a Free Consultation
               </h3>
-              <p className="text-white/90 mb-6">
+              <p className="text-sm sm:text-base text-white/90 mb-6">
                 Schedule a 30-minute call to discuss your vision and get expert guidance on your wedding website.
               </p>
-              <Button variant="hero" size="lg" className="bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
                 Schedule Call
-                <Clock className="w-5 h-5" />
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </Card>
             
