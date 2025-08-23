@@ -85,7 +85,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => {
             const IconComponent = service.icon
             return (
@@ -134,7 +134,7 @@ const Services = () => {
             Most Popular
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="font-playfair text-3xl font-bold mb-4">
                 Complete Wedding Package
@@ -143,7 +143,7 @@ const Services = () => {
                 Everything you need for a luxury wedding website experience, including all services plus premium features.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-4 mb-8">
                 {premiumFeatures.map((feature, idx) => {
                   const IconComponent = feature.icon
                   return (
