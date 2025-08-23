@@ -54,14 +54,14 @@ const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Our Story */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20">
           <div>
             <div className="flex items-center space-x-2 bg-navy-elegant/10 rounded-full px-4 py-2 mb-6 w-fit">
               <Star className="w-5 h-5 text-navy-elegant" />
               <span className="text-sm font-medium text-navy-elegant">Our Story</span>
             </div>
             
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-elegant mb-6">
+            <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-navy-elegant mb-6">
               Creating Digital Love Stories Since 2018
             </h2>
             
@@ -79,12 +79,12 @@ const About = () => {
               </p>
             </div>
             
-            <div className="flex space-x-4 mt-8">
-              <Button variant="elegant" size="lg">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Button variant="elegant" size="lg" className="w-full sm:w-auto">
                 Our Process
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-navy-elegant text-navy-elegant hover:bg-navy-elegant hover:text-white">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-navy-elegant text-navy-elegant hover:bg-navy-elegant hover:text-white">
                 View Awards
               </Button>
             </div>

@@ -95,17 +95,17 @@ const Contact = () => {
             </div>
           </div>
           
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-elegant mb-4">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-navy-elegant mb-4">
             Let's Start Your Dream Wedding Website
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to create something beautiful together? We'd love to hear your story and discuss your vision.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Contact Form */}
-          <Card className="p-8 shadow-elegant border-0 bg-gradient-elegant">
+          <Card className="p-6 sm:p-8 shadow-elegant border-0 bg-gradient-elegant">
             <div className="mb-8">
               <h3 className="font-playfair text-2xl font-semibold text-navy-elegant mb-2">
                 Tell Us About Your Wedding
@@ -116,7 +116,7 @@ const Contact = () => {
             </div>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="partner1" className="text-navy-elegant font-medium">Partner 1 Name *</Label>
                   <Input 
@@ -139,7 +139,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-navy-elegant font-medium">Email Address *</Label>
                   <Input 
