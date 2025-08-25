@@ -18,51 +18,31 @@ const services = [
     icon: Palette,
     title: "Custom Wedding Website Design",
     description: "Bespoke designs tailored to your unique love story and wedding theme",
-    features: ["Personalized color schemes", "Custom typography", "Responsive design", "SEO optimized"],
-    price: "Starting at $299"
-  },
-  {
-    icon: Users,
-    title: "RSVP & Guest Management",
-    description: "Seamless invitation and guest management system with automated reminders",
-    features: ["Digital RSVPs", "Guest tracking", "Meal preferences", "Plus-one management"],
-    price: "Starting at $149"
-  },
-  {
-    icon: Gift,
-    title: "Registry Integration",
-    description: "Connect multiple gift registries in one elegant, easy-to-navigate interface",
-    features: ["Multiple registry links", "Gift tracking", "Thank you automation", "Wishlist display"],
-    price: "Starting at $99"
+    features: ["Personalized color schemes", "Custom typography", "Responsive design", ],
+    price: "Starting at Rs.5999/-"
   },
   {
     icon: MapPin,
     title: "Venue Information Pages",
     description: "Detailed venue information with maps, directions, and accommodation guides",
-    features: ["Interactive maps", "Hotel recommendations", "Transportation info", "Local attractions"],
+    features: ["Interactive maps", "Transportation info", "Local attractions"],
     price: "Starting at $79"
   },
-  {
-    icon: Calendar,
-    title: "Wedding Timeline & Events",
-    description: "Interactive timeline showcasing your wedding weekend events and schedule",
-    features: ["Event schedule", "Countdown timers", "Weather integration", "Calendar sync"],
-    price: "Starting at $129"
-  },
+
   {
     icon: Camera,
     title: "Photo Gallery & Sharing",
     description: "Beautiful galleries for engagement photos and live wedding photo sharing",
-    features: ["Secure photo uploads", "Guest photo sharing", "Professional galleries", "Download options"],
+    features: ["Secure photo uploads", "Guest photo sharing", "Professional galleries"],
     price: "Starting at $199"
   }
 ]
 
 const premiumFeatures = [
   { icon: Crown, text: "Priority Support" },
-  { icon: Sparkles, text: "Premium Templates" }, 
-  { icon: MessageCircle, text: "Live Chat Integration" },
-  { icon: Smartphone, text: "Mobile App Access" }
+  { icon: Sparkles, text: "Premium Design" }, 
+  { icon: MessageCircle, text: "Map integration" },
+  { icon: Smartphone, text: "Mobile Web Access" }
 ]
 
 const Services = () => {
@@ -118,10 +98,12 @@ const Services = () => {
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-navy-elegant">{service.price}</span>
+                  {/* <span className="font-semibold text-navy-elegant">{service.price}</span> */}
+                  <a href="tel:+918855888965" >
                   <Button variant="outline" size="sm" className="border-rose-gold-dark text-rose-gold-dark hover:bg-rose-gold hover:text-navy-elegant">
                     Learn More
                   </Button>
+                  </a>
                 </div>
               </Card>
             )
@@ -158,13 +140,15 @@ const Services = () => {
             
             <div className="text-center md:text-right">
               <div className="mb-4">
-                <span className="text-4xl font-playfair font-bold text-rose-gold">$899</span>
+                <span className="text-4xl font-playfair font-bold text-rose-gold">25% OFF</span>
                 <span className="text-white/70 ml-2">complete package</span>
               </div>
-              <p className="text-white/80 mb-6">Save $200 compared to individual services</p>
+              <p className="text-white/80 mb-6">Save 5000/- compared to individual services</p>
+              <a href="tel:+918855888965" >
               <Button variant="hero" size="lg" className="bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
                 Get Started Today
               </Button>
+              </a>
             </div>
           </div>
         </Card>

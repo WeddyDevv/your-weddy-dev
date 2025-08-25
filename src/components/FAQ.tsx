@@ -11,23 +11,15 @@ import { HelpCircle, MessageCircle, Heart } from "lucide-react"
 const faqs = [
   {
     question: "How long does it take to create a wedding website?",
-    answer: "Most wedding websites are completed within 7-14 business days from the time we receive all your content and photos. Rush orders can be accommodated for an additional fee, with completion in 3-5 business days."
+    answer: "Most wedding websites are completed within 7-10 business days from the time we receive all your content and photos. Rush orders can be accommodated for an additional fee, with completion in 3-5 business days."
   },
   {
     question: "What information do I need to provide?",
-    answer: "We'll need your wedding details (date, venue, schedule), couple photos, your story, guest information for RSVPs, and any specific design preferences. We provide a detailed checklist to make this process smooth and easy."
-  },
-  {
-    question: "Can guests RSVP online and how does it work?",
-    answer: "Yes! Our RSVP system is fully integrated and allows guests to respond online, select meal preferences, indicate plus-ones, and add special notes. You'll have real-time access to all responses through your admin dashboard."
+    answer: "We'll need your wedding details (date, venue, schedule), couple photos, your story,  and any specific design preferences. We provide a detailed checklist to make this process smooth and easy."
   },
   {
     question: "Is the website mobile-friendly?",
     answer: "Absolutely! All our websites are fully responsive and optimized for mobile devices, tablets, and desktops. We understand that many guests will access your site on their phones, so mobile experience is a top priority."
-  },
-  {
-    question: "Can I update the website myself after it's complete?",
-    answer: "Yes, we provide easy-to-use admin access where you can update details like wedding timeline, photos, announcements, and RSVP information. We also include training and ongoing support to help you manage your site."
   },
   {
     question: "What happens after the wedding?",
@@ -39,15 +31,12 @@ const faqs = [
   },
   {
     question: "How much does a wedding website cost?",
-    answer: "Our packages range from $299 for basic custom designs to $899 for our complete luxury package. Pricing depends on features, complexity, and customization level. We offer payment plans and always provide detailed quotes upfront with no hidden fees."
+    answer: "Our packages range from Rs.5999/- for basic custom designs to Rs.11999/- for our complete luxury package. Pricing depends on features, complexity, and customization level. We offer payment plans and always provide detailed quotes upfront with no hidden fees."
   },
-  {
-    question: "Can you integrate with our wedding registry?",
-    answer: "Yes! We can seamlessly integrate multiple registries from popular retailers like Amazon, Williams Sonoma, Crate & Barrel, and more. Guests can easily access all your registries from one convenient location on your website."
-  },
+
   {
     question: "What if we need to change wedding details after the site is live?",
-    answer: "No problem! We understand that wedding planning involves changes. You have admin access to update most details yourself, and our team provides complimentary support for any major changes during the first 30 days after launch."
+    answer: "No problem! We understand that wedding planning involves changes. our team provides complimentary support for any major changes with small fees"
   }
 ]
 
@@ -101,14 +90,18 @@ const FAQ = () => {
               We're here to help! Our team is ready to answer any specific questions about your wedding website needs and provide personalized guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="tel:+918855888965" >
               <Button variant="hero" size="lg" className="bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
                 Chat With Us Now
                 <MessageCircle className="w-5 h-5" />
               </Button>
+              </a>
+              <a href="tel:+918855888965" >
               <Button variant="luxury" size="lg" className="border-white text-white hover:bg-white hover:text-navy-elegant">
                 Schedule Consultation
                 <Heart className="w-5 h-5" />
               </Button>
+              </a>
             </div>
           </Card>
         </div>
