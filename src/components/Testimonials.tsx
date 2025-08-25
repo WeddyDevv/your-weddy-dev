@@ -7,10 +7,10 @@ const testimonials = [
     name: "Aisha & Mohammad Ahmed",
     location: "Mumbai, Maharashtra",
     wedding: "Royal Palace Wedding",
-    quote: "Eternal Moments created the most beautiful wedding website for us. Our guests were amazed by the elegant design and how easy it was to RSVP. The team truly captured our love story perfectly.",
+    quote: "Eternal Moments created the most beautiful wedding website for us. Our guests were amazed by the elegant design  The team truly captured our love story perfectly.",
     rating: 5,
     image: "/placeholder-couple1.jpg"
-  },
+  },  
   {
     id: 2,
     name: "Fatima & Ali Hassan",
@@ -25,7 +25,7 @@ const testimonials = [
     name: "Zara & Omar Khan",
     location: "Lahore, Pakistan",
     wedding: "Garden Romance",
-    quote: "From start to finish, the process was seamless. They understood our vision and brought it to life beautifully. The RSVP system made managing our guest list so much easier!",
+    quote: "From start to finish, the process was seamless. They understood our vision and brought it to life beautifully. system made managing our guest list so much easier!",
     rating: 5,
     image: "/placeholder-couple3.jpg"
   },
@@ -100,7 +100,7 @@ const Testimonials = () => {
         </div>
         
         {/* Trust Indicators */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
           <div className="group">
             <div className="text-3xl font-playfair font-bold text-navy-elegant group-hover:text-rose-gold-dark transition-colors">
               500+
@@ -125,7 +125,7 @@ const Testimonials = () => {
             </div>
             <div className="text-sm text-muted-foreground">Support Available</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

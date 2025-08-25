@@ -51,8 +51,8 @@ const values = [
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 bg-background ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Our Story */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20">
           <div>
@@ -62,7 +62,7 @@ const About = () => {
             </div>
             
             <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-navy-elegant mb-6">
-              Creating Digital Love Stories Since 2018
+              Creating Digital Love Stories 
             </h2>
             
             <div className="space-y-6 text-muted-foreground">
@@ -80,13 +80,15 @@ const About = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <a href="tel:+918855888965" >
               <Button variant="elegant" size="lg" className="w-full sm:w-auto">
                 Our Process
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto border-navy-elegant text-navy-elegant hover:bg-navy-elegant hover:text-white">
+              </a>
+              {/* <Button variant="outline" size="lg" className="w-full sm:w-auto border-navy-elegant text-navy-elegant hover:bg-navy-elegant hover:text-white">
                 View Awards
-              </Button>
+              </Button> */}
             </div>
           </div>
           
@@ -116,7 +118,7 @@ const About = () => {
         </div>
 
         {/* Values */}
-        <div className="mb-20">
+        <div className="mb-2">
           <div className="text-center mb-12">
             <h3 className="font-playfair text-3xl md:text-4xl font-bold text-navy-elegant mb-4">
               What Drives Us
@@ -151,7 +153,7 @@ const About = () => {
         </div>
 
         {/* Team */}
-        <div>
+        {/* <div>
           <div className="text-center mb-12">
             <h3 className="font-playfair text-3xl md:text-4xl font-bold text-navy-elegant mb-4">
               Meet Our Team
@@ -194,7 +196,7 @@ const About = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

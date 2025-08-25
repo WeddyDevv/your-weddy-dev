@@ -4,10 +4,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="tel:+918855888965" >
         <div className="flex items-center space-x-2">
           <Heart className="text-rose-gold-dark w-8 h-8" />
-          <span className="font-playfair text-2xl font-semibold text-navy-elegant">Eternal Moments</span>
+          <span className="font-playfair text-2xl font-semibold text-navy-elegant">Weddy Dev</span>
         </div>
+        </a>
         <nav className="hidden md:flex space-x-8">
           <a 
             href="#home" 

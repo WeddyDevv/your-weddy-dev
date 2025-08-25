@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
+import emailjs from "emailjs-com";
 import { 
   Phone, 
   Mail, 
@@ -33,26 +34,21 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    value: "+1 (555) 123-4567",
-    description: "Monday - Friday, 9AM - 6PM PST"
+    value: "+91 8855888965",
+    description: "Monday - Friday, 9AM - 11PM PST"
   },
-  {
-    icon: Mail,
-    title: "Email Us", 
-    value: "hello@eternalmoments.com",
-    description: "We'll respond within 24 hours"
-  },
-  {
-    icon: MessageCircle,
-    title: "Live Chat",
-    value: "Available Now",
-    description: "Get instant support online"
-  },
+  // {
+  //   icon: Mail,
+  //   title: "Email Us", 
+  //   value: "hello@eternalmoments.com",
+  //   description: "We'll respond within 24 hours"
+  // },
+
   {
     icon: MapPin,
     title: "Visit Us",
-    value: "San Francisco, CA",
-    description: "By appointment only"
+    value: "mallepally",
+    description: "By Contact only"
   }
 ]
 
@@ -61,29 +57,28 @@ const Contact = () => {
   const { toast } = useToast()
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>()
 
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true)
-    
+   const onSubmit = async (data) => {
+    setIsSubmitting(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      toast({
-        title: "Thank you for reaching out! 💕",
-        description: "We'll get back to you within 24 hours with a personalized proposal.",
-      })
-      
-      reset()
+      await emailjs.send(
+        "service_03933oj",   // Replace with your EmailJS Service ID
+        "template_ss1grrh",  // Replace with your EmailJS Template ID
+        {
+          partner1: data.partner1,
+          phone: data.phone,
+          venue: data.venue,
+          message: data.message,
+        },
+        "Tto7XXOZ6UrX8tk6X" // Replace with your EmailJS Public Key
+      );
+      alert("Form submitted successfully! We'll get back to you soon.");
     } catch (error) {
-      toast({
-        title: "Something went wrong",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
+      console.error("Email send failed:", error);
+      alert("Something went wrong, please try again later.");
     }
-  }
+    setIsSubmitting(false);
+  };
+
 
   return (
     <section id="contact" className="py-8 sm:py-12 lg:py-20 bg-background overflow-hidden">
@@ -121,16 +116,16 @@ const Contact = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="partner1" className="text-sm font-medium text-navy-elegant">Partner 1 Name *</Label>
+                    <Label htmlFor="Name" className="text-sm font-medium text-navy-elegant">Name *</Label>
                     <Input 
                       id="partner1"
-                      {...register("partner1", { required: "Partner 1 name is required" })}
+                      {...register("partner1", { required: "Name is required" })}
                       placeholder="Enter your name"
                       className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
                     />
                     {errors.partner1 && <p className="text-red-500 text-xs">{errors.partner1.message}</p>}
                   </div>
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <Label htmlFor="partner2" className="text-sm font-medium text-navy-elegant">Partner 2 Name *</Label>
                     <Input 
                       id="partner2"
@@ -139,11 +134,11 @@ const Contact = () => {
                       className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
                     />
                     {errors.partner2 && <p className="text-red-500 text-xs">{errors.partner2.message}</p>}
-                  </div>
+                  </div> */}
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <Label htmlFor="email" className="text-sm font-medium text-navy-elegant">Email Address *</Label>
                     <Input 
                       id="email"
@@ -159,20 +154,20 @@ const Contact = () => {
                       className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
                     />
                     {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
-                  </div>
+                  </div> */}
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-sm font-medium text-navy-elegant">Phone Number</Label>
                     <Input 
                       id="phone"
                       type="tel"
-                      {...register("phone")}
-                      placeholder="+1 (555) 123-4567"
+                      {...register(("phone"),{ required: "Name is required" })}
+                      placeholder="+91 1234567890"
                       className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
                     />
                   </div>
                 </div>
                 
-                <div className="space-y-2">
+                {/* <div className="space-y-2">
                   <Label htmlFor="weddingDate" className="text-sm font-medium text-navy-elegant">Wedding Date *</Label>
                   <Input 
                     id="weddingDate"
@@ -181,7 +176,7 @@ const Contact = () => {
                     className="text-sm border-rose-gold/30 focus:border-rose-gold-dark"
                   />
                   {errors.weddingDate && <p className="text-red-500 text-xs">{errors.weddingDate.message}</p>}
-                </div>
+                </div> */}
                 
                 <div className="space-y-2">
                   <Label htmlFor="venue" className="text-sm font-medium text-navy-elegant">Wedding Venue (Optional)</Label>
@@ -193,7 +188,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <div className="space-y-2">
+                {/* <div className="space-y-2">
                   <Label htmlFor="budget" className="text-sm font-medium text-navy-elegant">Website Budget Range</Label>
                   <select 
                     {...register("budget")}
@@ -205,13 +200,13 @@ const Contact = () => {
                     <option value="1000-2000">$1,000 - $2,000</option>
                     <option value="over-2000">$2,000+</option>
                   </select>
-                </div>
+                </div> */}
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-medium text-navy-elegant">Tell Us Your Vision *</Label>
+                  <Label htmlFor="message" className="text-sm font-medium text-navy-elegant">Tell Us Your Vision </Label>
                   <Textarea 
                     id="message"
-                    {...register("message", { required: "Please tell us about your vision" })}
+                    {...register("message")}
                     placeholder="Describe your dream wedding website, style preferences, special requirements, or any questions you have..."
                     rows={3}
                     className="text-sm border-rose-gold/30 focus:border-rose-gold-dark resize-none"
@@ -283,6 +278,7 @@ const Contact = () => {
               <p className="text-sm sm:text-base text-white/90 mb-6">
                 Schedule a 30-minute call to discuss your vision and get expert guidance on your wedding website.
               </p>
+              <a href="tel:+918855888965" >
               <Button 
                 variant="hero" 
                 size="lg" 
@@ -291,6 +287,7 @@ const Contact = () => {
                 Schedule Call
                 <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
+              </a>
             </Card>
             
             {/* Trust Indicator */}
@@ -298,10 +295,10 @@ const Contact = () => {
               <div className="flex items-center justify-between">
                 <div className="min-w-0 flex-1">
                   <h4 className="font-playfair font-semibold text-navy-elegant mb-1 text-sm sm:text-base">
-                    Join 500+ Happy Couples
+                    Join 100+ Happy Couples
                   </h4>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    Trusted by couples worldwide
+                    Trusted by couples in Hyderabad
                   </p>
                 </div>
                 <div className="flex flex-shrink-0 ml-4">

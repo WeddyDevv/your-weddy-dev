@@ -16,10 +16,10 @@ const Hero = () => {
       
       {/* Floating Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-rose-gold rounded-full animate-pulse opacity-60" />
-        <div className="absolute top-32 right-16 w-1 h-1 bg-champagne rounded-full animate-pulse opacity-80" />
-        <div className="absolute bottom-40 left-20 w-3 h-3 bg-rose-gold/40 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-60 right-32 w-2 h-2 bg-champagne/60 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+         <div className="absolute top-20 left-10 w-5 h-20 bg-rose-gold rounded-full animate-pulse opacity-60" />
+        <div className="absolute top-32 right-16 w-10 h-10 bg-champagne rounded-full animate-pulse opacity-80" />
+        <div className="absolute bottom-40 left-20 w-10 h-10 bg-rose-gold/40 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute bottom-60 right-32 w-20 h-20 bg-champagne/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
       
       {/* Content */}
@@ -28,19 +28,22 @@ const Hero = () => {
           <div className="flex justify-center mb-8 animate-fade-in">
             <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-lg rounded-full px-6 py-3 border border-white/20 shadow-elegant">
               <Star className="w-5 h-5 text-rose-gold" fill="currentColor" />
-              <span className="text-sm font-medium tracking-wide">Luxury Wedding Websites</span>
+              <span className="text-sm font-medium tracking-wide">Luxury Wedding Invitation Websites</span>
               <Star className="w-5 h-5 text-rose-gold" fill="currentColor" />
             </div>
           </div>
           
-          <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up">
-            <span className="block leading-tight">Creating Your</span>
-            <span className="block text-rose-gold bg-gradient-to-r from-rose-gold to-champagne bg-clip-text text-transparent drop-shadow-lg">Perfect Love Story</span>
-            <span className="block leading-tight">Online</span>
+         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up">
+            <span className="block leading-tight">Designing Your</span>
+            <span className="block text-rose-gold bg-gradient-to-r from-rose-gold to-champagne bg-clip-text text-transparent drop-shadow-lg">
+              Perfect Wedding Invitation
+            </span>
+            <span className="block leading-tight">Website Experience</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl mb-10 text-white/95 font-light leading-relaxed animate-fade-in-up max-w-4xl mx-auto px-4">
-            We design breathtaking, custom wedding websites that capture the essence of your unique love story. From elegant invitations to seamless RSVP management, every detail crafted with luxury in mind.
+         <p className="text-lg sm:text-xl md:text-2xl mb-10 text-white/95 font-light leading-relaxed animate-fade-in-up max-w-4xl mx-auto px-4">
+            We craft elegant, personalized wedding invitation websites that capture the beauty of your love story. 
+            From modern designs to seamless RSVP integration, we make your special day unforgettable online.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up mb-16">
@@ -50,23 +53,24 @@ const Hero = () => {
               className="group shadow-elegant hover:shadow-soft"
               onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See Our Creations
+              See Our Work
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            
+            <a href="tel:+918855888965" >
             <Button 
               variant="luxury" 
               size="xl"
               className="shadow-elegant hover:shadow-soft"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Start Your Journey
+               Get Started
               <Heart className="w-5 h-5" />
             </Button>
+            </a>
           </div>
           
           {/* Stats - Mobile Responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 animate-fade-in">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 animate-fade-in">
             <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="text-3xl sm:text-4xl font-playfair font-bold text-rose-gold mb-2">500+</div>
               <div className="text-sm text-white/90 tracking-wide">Dream Weddings Created</div>
@@ -79,7 +83,7 @@ const Hero = () => {
               <div className="text-3xl sm:text-4xl font-playfair font-bold text-rose-gold mb-2">5★</div>
               <div className="text-sm text-white/90 tracking-wide">Average Rating</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       

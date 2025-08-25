@@ -11,7 +11,8 @@ const portfolioItems = [
     style: "Classic Romance",
     image: portfolioImage,
     features: ["Custom RSVP System", "Guest Registry", "Photo Gallery", "Gift Registry"],
-    color: "Rose Gold & Navy"
+    color: "Rose Gold & Navy",
+        link:"https://weddydevv.github.io/Wedding-invitation/"
   },
   {
     id: 2, 
@@ -20,7 +21,8 @@ const portfolioItems = [
     style: "Sophisticated Elegance",
     image: portfolioImage,
     features: ["Interactive Timeline", "Venue Maps", "Accommodation Guide", "Live Updates"],
-    color: "Champagne & Burgundy"
+    color: "Champagne & Burgundy",
+    link:"https://weddydevv.github.io/wedding-invitation3/"
   },
   {
     id: 3,
@@ -30,33 +32,6 @@ const portfolioItems = [
     image: portfolioImage,
     features: ["Mobile Responsive", "Social Media Integration", "Weather Updates", "Transportation"],
     color: "Coral & Teal"
-  },
-  {
-    id: 4,
-    title: "Metropolitan Glamour",
-    couple: "Sophia & Alexander", 
-    style: "Modern Luxury",
-    image: portfolioImage,
-    features: ["Guest Messaging", "Digital Guestbook", "Live Streaming Info", "Menu Selection"],
-    color: "Black & Gold"
-  },
-  {
-    id: 5,
-    title: "Rustic Country Charm",
-    couple: "Olivia & Lucas",
-    style: "Vintage Rustic",
-    image: portfolioImage,
-    features: ["Story Timeline", "Family Trees", "Playlist Requests", "Parking Info"],
-    color: "Sage & Cream"
-  },
-  {
-    id: 6,
-    title: "Royal Palace Affair",
-    couple: "Victoria & William",
-    style: "Regal Elegance", 
-    image: portfolioImage,
-    features: ["Multilingual Support", "Dress Code Guide", "Gift Tracking", "Thank You Notes"],
-    color: "Royal Blue & Silver"
   }
 ]
 
@@ -82,6 +57,12 @@ const Portfolio = () => {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {portfolioItems.map((item, index) => (
+                       <a 
+  href={item.link} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="block"
+>
             <Card 
               key={item.id} 
               className="group overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm"
@@ -99,9 +80,9 @@ const Portfolio = () => {
                     {item.style}
                   </span>
                 </div>
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 opacity-100  transition-opacity duration-300">
                   <Button size="sm" variant="hero" className="rounded-full">
-                    <ExternalLink className="w-4 h-4" />
+                    Click to Preview
                   </Button>
                 </div>
               </div>
@@ -134,18 +115,19 @@ const Portfolio = () => {
                 </div>
               </div>
             </Card>
+          </a>
           ))}
         </div>
         
         <div className="text-center">
-          <Button variant="elegant" size="lg">
+          {/* <Button variant="elegant" size="lg">
             View All Projects
             <ArrowRight className="w-5 h-5" />
-          </Button>
+          </Button> */}
         </div>
       </div>
-    </section>
-  )
+      </section>
+    )
 }
 
 export default Portfolio
