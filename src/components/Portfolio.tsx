@@ -27,7 +27,7 @@ const portfolioItems = [
     image: portfolioImage1,
     features: ["Interactive Timeline", "Venue Maps", "Sweet Captured Moments", "Bridesmaids & Groomsmen", "Live Updates"],
     color: "White With Soft Pastel Floral",
-    link:"https://mohammed-habiba-wedding.netlify.app/",
+    link:"https://weddy3.netlify.app/",
     price:"7999/-"
   },
   {
