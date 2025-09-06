@@ -34,7 +34,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    value: "+91 8855888965",
+    value: "+91 9160703822",
     description: "Monday - Friday, 9AM - 11PM PST"
   },
   // {
@@ -278,7 +278,7 @@ const Contact = () => {
               <p className="text-sm sm:text-base text-white/90 mb-6">
                 Schedule a 30-minute call to discuss your vision and get expert guidance on your wedding website.
               </p>
-              <a href="tel:+918855888965" >
+              <a href="tel:+919160703822" >
               <Button 
                 variant="hero" 
                 size="lg" 

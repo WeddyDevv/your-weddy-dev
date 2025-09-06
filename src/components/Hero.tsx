@@ -56,7 +56,7 @@ const Hero = () => {
               See Our Work
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <a href="tel:+918855888965" >
+            <a href="tel:+919160703822" >
             <Button 
               variant="luxury" 
               size="xl"

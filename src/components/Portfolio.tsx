@@ -16,7 +16,8 @@ const portfolioItems = [
     image: portfolioImage,
     features: ["Count-Down", "Quran Aayat", "When & Where ", "Pre-Wedding Ceremonies" ,"Our Wedding Menu", "Live Location"],
     color: "Minimal & Elegant Wedding Islamic Touch",
-        link:"https://asif-sana-wedding.netlify.app/"
+        link:"https://asif-sana-wedding.netlify.app/",
+    price:"5999/-"
   },
   {
     id: 2, 
@@ -26,7 +27,8 @@ const portfolioItems = [
     image: portfolioImage1,
     features: ["Interactive Timeline", "Venue Maps", "Sweet Captured Moments", "Bridesmaids & Groomsmen", "Live Updates"],
     color: "White With Soft Pastel Floral",
-    link:"https://mohammed-habiba-wedding.netlify.app/"
+    link:"https://mohammed-habiba-wedding.netlify.app/",
+    price:"7999/-"
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ const portfolioItems = [
     image: portfolioImage2,
     features: ["Mobile Responsive", "Social Media Integration", "Count-Down", "Venue Map"],
     color: "Coral & Teal",
-    link:"https://asif-ariba-wedding.netlify.app/"
+    link:"https://asif-ariba-wedding.netlify.app/",
+    price:"9999/-"
   },
   {
     id: 4,
@@ -46,7 +49,8 @@ const portfolioItems = [
     image: portfolioImage3,
     features: ["Mobile Responsive", "Our Wedding Menu", "Count-Down", "Pre Wedding Activities"],
     color: "Coral & Teal",
-    link:"https://weddy4.netlify.app/"
+    link:"https://weddy4.netlify.app/",
+    price:"7999/-"
   },
   {
     id: 5,
@@ -56,7 +60,8 @@ const portfolioItems = [
     image: portfolioImage4,
     features: ["Mobile Responsive", "Our Wedding Menu", "Count-Down", "Pre Wedding Activities", "Gallery", "Bridesmaids & Groomsmen"],
     color: "Coral & Teal",
-    link:"https://weddy5.netlify.app/"
+    link:"https://weddy5.netlify.app/",
+    price:"6999/-"
   }
 
 ]
@@ -137,6 +142,7 @@ const Portfolio = () => {
                       </div>
                     ))}
                   </div>
+                  <h2 className="font-semibold text-3xl "> Price: {item.price}</h2>
                 </div>
               </div>
             </Card>

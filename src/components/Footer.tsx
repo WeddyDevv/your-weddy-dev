@@ -47,7 +47,7 @@ const Footer = () => {
             <ul className="space-y-3 text-white/80">
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 8855888965</span>
+                <span>+91 9160703822</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
