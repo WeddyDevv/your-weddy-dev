@@ -60,7 +60,6 @@ const portfolioItems = [
   }
 
 ]
-
 const Portfolio = () => {
   return (
     <section id="portfolio" className="py-20 bg-gradient-elegant">
@@ -144,6 +143,8 @@ const Portfolio = () => {
           </a>
           ))}
         </div>
+        
+
         
         <div className="text-center">
           {/* <Button variant="elegant" size="lg">
