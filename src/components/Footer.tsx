@@ -16,13 +16,13 @@ const Footer = () => {
               Trusted by couples worldwide for luxury wedding experiences.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-rose-gold/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://www.instagram.com/weddy_dev/?utm_source=ig_web_button_share_sheet" target="_blank" className="w-10 h-10 bg-white/10 hover:bg-rose-gold/20 rounded-full flex items-center justify-center transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-rose-gold/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61580145502687" target="_blank" className="w-10 h-10 bg-white/10 hover:bg-rose-gold/20 rounded-full flex items-center justify-center transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-rose-gold/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="#" target="_blank" className="w-10 h-10 bg-white/10 hover:bg-rose-gold/20 rounded-full flex items-center justify-center transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>

@@ -1,38 +1,64 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ExternalLink, Heart, Star, Award, ArrowRight } from "lucide-react"
-import portfolioImage from "@/assets/portfolio-gallery.jpg"
+import portfolioImage from "@/assets/hashim&ayesha.jpg"
+import portfolioImage1 from "@/assets/Mohd &Habeeba.jpg"
+import portfolioImage2 from "@/assets/123.jpeg"
+import portfolioImage3 from "@/assets/web4.png"
+import portfolioImage4 from "@/assets/web5.png"
 
 const portfolioItems = [
   {
     id: 1,
-    title: "Elegant Garden Wedding",
-    couple: "Sarah & Michael",
+    title: "Elegant Wedding Invitation",
+    couple: "Hashim & Ayesha ",
     style: "Classic Romance",
     image: portfolioImage,
-    features: ["Custom RSVP System", "Guest Registry", "Photo Gallery", "Gift Registry"],
-    color: "Rose Gold & Navy",
-        link:"https://weddydevv.github.io/Wedding-invitation/"
+    features: ["Count-Down", "Quran Aayat", "When & Where ", "Pre-Wedding Ceremonies" ,"Our Wedding Menu", "Live Location"],
+    color: "Minimal & Elegant Wedding Islamic Touch",
+        link:"https://asif-sana-wedding.netlify.app/"
   },
   {
     id: 2, 
-    title: "Luxury Vineyard Celebration",
-    couple: "Emma & James",
+    title: "Classic Wedding Charm",
+    couple: "Mohd & Habeeba ",
     style: "Sophisticated Elegance",
-    image: portfolioImage,
-    features: ["Interactive Timeline", "Venue Maps", "Accommodation Guide", "Live Updates"],
-    color: "Champagne & Burgundy",
-    link:"https://weddydevv.github.io/wedding-invitation3/"
+    image: portfolioImage1,
+    features: ["Interactive Timeline", "Venue Maps", "Sweet Captured Moments", "Bridesmaids & Groomsmen", "Live Updates"],
+    color: "White With Soft Pastel Floral",
+    link:"https://mohammed-habiba-wedding.netlify.app/"
   },
   {
     id: 3,
-    title: "Coastal Beach Romance", 
-    couple: "Isabella & David",
+    title: "Graceful Wedding Elegance", 
+    couple: "Asif & Ariba",
     style: "Bohemian Chic",
-    image: portfolioImage,
-    features: ["Mobile Responsive", "Social Media Integration", "Weather Updates", "Transportation"],
-    color: "Coral & Teal"
+    image: portfolioImage2,
+    features: ["Mobile Responsive", "Social Media Integration", "Count-Down", "Venue Map"],
+    color: "Coral & Teal",
+    link:"https://asif-ariba-wedding.netlify.app/"
+  },
+  {
+    id: 4,
+    title: "Classic Wedding Elegance", 
+    couple: "Yaseen & Sara",
+    style: "Bohemian Chic",
+    image: portfolioImage3,
+    features: ["Mobile Responsive", "Our Wedding Menu", "Count-Down", "Pre Wedding Activities"],
+    color: "Coral & Teal",
+    link:"https://weddy4.netlify.app/"
+  },
+  {
+    id: 5,
+    title: "Wedding Elegance", 
+    couple: "Dr.Shakeel & Dr.Khateja",
+    style: "Bohemian Chic",
+    image: portfolioImage4,
+    features: ["Mobile Responsive", "Our Wedding Menu", "Count-Down", "Pre Wedding Activities", "Gallery", "Bridesmaids & Groomsmen"],
+    color: "Coral & Teal",
+    link:"https://weddy5.netlify.app/"
   }
+
 ]
 
 const Portfolio = () => {
