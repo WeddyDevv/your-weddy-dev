@@ -90,13 +90,13 @@ const FAQ = () => {
               We're here to help! Our team is ready to answer any specific questions about your wedding website needs and provide personalized guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+918855888965" >
+              <a href="tel:+919160703822" >
               <Button variant="hero" size="lg" className="bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
                 Chat With Us Now
                 <MessageCircle className="w-5 h-5" />
               </Button>
               </a>
-              <a href="tel:+918855888965" >
+              <a href="tel:+919160703822" >
               <Button variant="luxury" size="lg" className="border-white text-white hover:bg-white hover:text-navy-elegant">
                 Schedule Consultation
                 <Heart className="w-5 h-5" />

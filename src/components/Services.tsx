@@ -99,7 +99,7 @@ const Services = () => {
                 
                 <div className="flex items-center justify-between">
                   {/* <span className="font-semibold text-navy-elegant">{service.price}</span> */}
-                  <a href="tel:+918855888965" >
+                  <a href="tel:+919160703822" >
                   <Button variant="outline" size="sm" className="border-rose-gold-dark text-rose-gold-dark hover:bg-rose-gold hover:text-navy-elegant">
                     Learn More
                   </Button>
@@ -144,7 +144,7 @@ const Services = () => {
                 <span className="text-white/70 ml-2">complete package</span>
               </div>
               <p className="text-white/80 mb-6">Save 5000/- compared to individual services</p>
-              <a href="tel:+918855888965" >
+              <a href="tel:+919160703822" >
               <Button variant="hero" size="lg" className="bg-rose-gold text-navy-elegant hover:bg-rose-gold-dark">
                 Get Started Today
               </Button>
